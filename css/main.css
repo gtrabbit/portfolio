@@ -7,7 +7,7 @@
   width: 100%;
   height: auto; }
 
-.orange-backdrop1, .blue-backdrop1, .blue-backdrop2, .landing .middle .pic {
+.orange-backdrop1, .blue-backdrop1, .blue-backdrop2, .pic, .mask-off {
   background-size: cover;
   background-repeat: no-repeat; }
 
@@ -18,25 +18,36 @@
   background-position: 50% 0px;
   background-color: black; }
 
-.white-section, .black-section {
+.white-section, .black-section, .screen {
   border-bottom: solid black 1px;
   border-top: solid black 1px; }
 
 body, p {
-  margin: 0px; }
+  margin: 0px;
+  font-family: 'Open Sans Condensed', sans-serif; }
 
 h1, h2, .wordpress h3, h3, h4, h5 {
-  margin: 0; }
+  margin: 0;
+  font-family: 'Artifika', serif;
+  text-rendering: optimizeLegibility; }
 
 h1 {
   font-size: 36pt;
-  font-weight: 700; }
+  font-weight: 500; }
 
 h2, .wordpress h3 {
   text-align: center;
   margin: 2% 1%;
   font-size: 36pt;
   text-shadow: 2px 2px 2px darkslategrey; }
+
+a {
+  color: #b8420f;
+  transition: color 0.5s; }
+  a:visited {
+    color: #0f85b8; }
+  a:hover {
+    color: #c0b08c; }
 
 .img-wrapper {
   margin: 2%;
@@ -45,7 +56,8 @@ h2, .wordpress h3 {
   background-position: center top;
   background-repeat: no-repeat;
   border: solid black 1px;
-  box-shadow: 1px 2px 5px 2px #191f1f; }
+  box-shadow: 1px 2px 5px 2px #191f1f;
+  min-height: 150px; }
 
 .float-left {
   float: left; }
@@ -71,9 +83,24 @@ h2, .wordpress h3 {
 .block {
   display: block;
   height: 30vh;
-  width: 80%;
+  width: 96%;
   margin: auto;
-  background-position: center center; }
+  background-position: center center;
+  flex-grow: 1; }
+
+.social {
+  height: 39px;
+  width: 39px;
+  transition: opacity 0.5s;
+  border-radius: 50%;
+  opacity: 0.5; }
+  .social:hover {
+    opacity: 1; }
+
+.make-block {
+  display: block;
+  width: 100%;
+  text-align: center; }
 
 .full-page, .white-section, .black-section {
   overflow: hidden;
@@ -100,19 +127,25 @@ h2, .wordpress h3 {
   background-blend-mode: color-dodge; }
 
 .blue-backdrop1 {
-  background-image: url("../images/backdrops/blueinkdissolvetall.jpg");
-  background-blend-mode: color-burn; }
+  background-image: url("../images/backdrops/trees-tall.jpg");
+  background-blend-mode: soft-light; }
 
 .blue-backdrop2 {
   background-image: url("../images/backdrops/prayerflags-tall.jpg");
   background-blend-mode: exclusion; }
 
+.pic, .mask-off {
+  background-image: url("../images/other/portrait.jpg");
+  background-position: 90%;
+  border-radius: 50%;
+  border: solid silver 2px;
+  height: 180px;
+  width: 180px;
+  margin: 3%; }
+
 .landing {
   align-items: center;
-  color: white;
-  border-bottom-color: white;
-  border-bottom-width: 1px;
-  border-bottom-style: solid; }
+  color: white; }
   .landing .middle {
     width: 92%;
     padding: 3%;
@@ -135,20 +168,13 @@ h2, .wordpress h3 {
         padding: 2%; }
       .landing .middle .intro-text .intro-under {
         padding: 2%; }
-    .landing .middle .pic {
-      background-image: url("../images/other/profile_pic.jpg");
-      border-radius: 50%;
-      border: solid silver 2px;
-      height: 180px;
-      min-width: 180px;
-      margin: 3%; }
   .landing .tagline {
     height: 30px;
     line-height: 30px;
     flex-grow: 1;
     width: 100%;
     margin-right: 25%;
-    border-top-color: #b8420f;
+    border-top-color: #3f4f73;
     border-top-width: 1px;
     border-top-style: solid;
     padding: 3%;
@@ -158,34 +184,27 @@ h2, .wordpress h3 {
     .landing .tagline span {
       flex-grow: 1;
       text-align: center; }
-    .landing .tagline .social {
-      height: 40px;
-      width: 40px;
-      background-color: white;
-      border-radius: 50%;
-      margin: 0% 5%;
-      transition: background-color 0.5s; }
-      .landing .tagline .social:hover {
-        background-color: #b8420f; }
     .landing .tagline nav {
       display: flex;
       justify-content: space-around;
-      flex-grow: 3; }
+      flex-grow: 3;
+      font-family: 'Artifika', serif; }
       .landing .tagline nav span {
-        color: #b8420f; }
+        color: #3f4f73; }
     .landing .tagline a {
-      color: #0f85b8;
+      color: #c0b08c;
       text-decoration: none;
       margin: 0% 2%;
       transition: color 0.5s; }
       .landing .tagline a:hover {
-        color: #b8420f; }
+        color: #3f4f73; }
     .landing .tagline .right {
       position: absolute;
       right: 15vw;
       bottom: 20px;
       font-size: 28pt;
-      color: white; }
+      color: white;
+      cursor: pointer; }
   .landing .front-heading {
     text-align: left;
     width: 100%;
@@ -194,10 +213,11 @@ h2, .wordpress h3 {
     padding: 3%;
     color: white; }
     .landing .front-heading h1 {
-      border-bottom-color: #b8420f;
+      border-bottom-color: #3f4f73;
       border-bottom-width: 1px;
       border-bottom-style: solid;
-      padding-left: 5%; }
+      padding-left: 5%;
+      font-size: 32pt; }
     .landing .front-heading span {
       padding-left: 15%; }
 
@@ -205,34 +225,33 @@ h2, .wordpress h3 {
   align-items: center;
   padding: 2%;
   flex-wrap: wrap;
-  border-bottom-color: white;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
   padding-top: 10%; }
 
 .sphere {
   border-radius: 50%;
   height: 180px;
   width: 180px;
-  mix-blend-mode: difference;
-  border: solid #0f85b8 3px;
+  border: solid darkolivegreen 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-size: 20pt;
-  background-color: white;
-  margin: 4% 1%; }
+  color: white;
+  font-size: 28pt;
+  background-color: rgba(30, 30, 30, 0.6);
+  margin: 4% 1%;
+  font-family: 'Artifika', serif; }
 
 .right {
   order: -1; }
 
 .preview-box {
   padding: 1%;
-  width: 60%;
+  width: 70%;
   flex-grow: 1; }
-  .preview-box ul {
-    padding: 2%; }
+  .preview-box ul, .preview-box p {
+    padding: 2%;
+    flex-grow: 1;
+    background-color: rgba(55, 55, 55, 0.5); }
 
 .list-wrapper {
   display: flex;
@@ -242,45 +261,57 @@ h2, .wordpress h3 {
     font-size: 13pt;
     font-weight: 700; }
   .list-wrapper ul {
-    margin: 1%; }
+    padding: 3%;
+    margin: 1%;
+    min-width: 150px; }
     .list-wrapper ul li {
-      padding: 1%;
-      margin: 1%;
+      padding: 2px;
+      margin: 5px;
       flex-grow: 1;
-      mix-blend-mode: exclusion;
       border-radius: 15px;
       color: white;
       font-size: 10pt; }
 
 .holder {
   height: auto;
-  border-radius: 15px;
+  border-radius: 5px;
   width: 92%;
   background-color: white;
   margin: 3% auto;
-  box-shadow: 1px 2px 5px 2px #191f1f, 1px 2px 9px 5px white;
+  box-shadow: 1px 2px 5px 2px #191f1f, 1px 2px 5px 2px white;
   padding: 1%; }
+  .holder .img-wrapper {
+    border: solid #47bdf0 2px; }
   .holder blockquote {
-    border-bottom: dashed silver 1px; }
+    border-bottom: dashed silver 1px;
+    width: 100%;
+    margin: 1%;
+    font-style: italic; }
   .holder cite {
-    margin-left: 60px; }
+    margin-left: 60px;
+    font-style: normal; }
     .holder cite::before {
       content: "--"; }
+  .holder p {
+    line-height: 120%; }
 
 .holder.smaller {
   width: 86%; }
 
 .automagic {
   font-size: 10pt;
-  color: black; }
+  color: black;
+  background-color: transparent; }
+  .automagic .holder.big {
+    width: 100%;
+    border-radius: 0; }
   .automagic .auto1 {
     background-image: url("../images/project-icons/automagic.jpg"); }
   .automagic h2, .automagic .wordpress h3, .wordpress .automagic h3 {
-    color: white;
-    mix-blend-mode: difference; }
+    color: white; }
   .automagic * p {
     margin: 3% 1%;
-    font-size: 9pt;
+    font-size: 10pt;
     color: #282828; }
 
 .auto2 {
@@ -295,55 +326,75 @@ h2, .wordpress h3 {
   .automagic-details p {
     margin: 10px;
     padding: 0 2%;
-    font-size: 9pt;
+    font-size: 10pt;
     text-align: justify; }
   .automagic-details h2, .automagic-details .wordpress h3, .wordpress .automagic-details h3 {
     font-size: 18pt; }
   .automagic-details figcaption {
     text-align: center;
-    color: #b8420f;
+    color: #3f4f73;
     padding-top: 1%;
     border-bottom: dashed silver 1px;
     font-size: 9pt;
     width: 70%;
     margin: auto;
-    background-color: rgba(71, 189, 240, 0.4);
+    background-color: rgba(192, 176, 140, 0.4);
     box-shadow: 0px 1px 4px 1px silver; }
 
 .automagic-afterthoughts {
-  align-items: center; }
+  align-items: center;
+  padding: 2%;
+  min-height: 100vh; }
   .automagic-afterthoughts .holder {
-    width: 40%;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black; }
+    width: 70%;
+    background-color: #412319;
+    color: white;
+    flex-grow: 1;
+    margin: 2%;
+    border: solid white 1px; }
     .automagic-afterthoughts .holder p {
       margin: 10px;
       padding: 0 2%;
-      font-size: 9pt;
+      font-size: 11pt;
       text-align: justify; }
-  .automagic-afterthoughts .sphere {
-    mix-blend-mode: color;
-    color: red; }
 
-.wordpress .headings {
-  width: 40%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: space-around; }
-  .wordpress .headings * {
-    width: 100%; }
-.wordpress h2, .wordpress h3 {
-  text-shadow: none;
-  z-index: 5; }
-.wordpress h3 {
-  font-size: 20pt; }
-.wordpress .holder {
-  color: black;
-  display: flex;
-  align-items: center;
-  font-size: 10pt; }
-.wordpress .img-wrapper {
-  flex-grow: 1; }
+.wordpress {
+  flex-wrap: wrap; }
+  .wordpress .headings {
+    width: 40%;
+    flex-grow: 1;
+    min-width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around; }
+    .wordpress .headings * {
+      width: 100%; }
+  .wordpress h2, .wordpress h3 {
+    text-shadow: none;
+    z-index: 5;
+    border-bottom: solid #b8420f 1px; }
+  .wordpress h3 {
+    font-size: 20pt; }
+  .wordpress .holder {
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 10pt; }
+  .wordpress a {
+    margin: 15px;
+    flex-grow: 1;
+    width: 40%;
+    opacity: 0.4; }
+    .wordpress a:hover {
+      overflow: hidden;
+      margin: 11px;
+      border: solid #3f4f73 4px;
+      opacity: 1; }
+  .wordpress .img-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    margin: 0; }
 
 .wp1 {
   background-image: url("../images/project-icons/restauranttheme.jpg");
@@ -359,18 +410,22 @@ h2, .wordpress h3 {
   align-items: center;
   overflow: hidden;
   background-color: white;
-  background-blend-mode: luminosity; }
+  background-blend-mode: luminosity;
+  max-width: 300px; }
   .other-projects .img-wrapper:hover {
     background-blend-mode: normal; }
-    .other-projects .img-wrapper:hover h3 {
+    .other-projects .img-wrapper:hover a {
       padding: 50% 0;
       background-color: rgba(250, 250, 250, 0.6);
-      color: black; }
-  .other-projects .img-wrapper h3 {
+      color: #b8420f; }
+  .other-projects .img-wrapper a {
     background-color: rgba(50, 50, 50, 0.6);
     text-align: center;
     width: 100%;
-    color: white; }
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.5s; }
 
 .hydrangeas {
   background-image: url("../images/project-icons/hydrangeas.jpg"); }
@@ -396,7 +451,222 @@ h2, .wordpress h3 {
 .wiki {
   background-image: url("../images/project-icons/wiki.jpg"); }
 
-.twitch {
-  background-image: url("../images/project-icons/twitchapp.jpg"); }
+.portfolio {
+  background-image: url("../images/project-icons/portfolio.jpg"); }
+
+.rogue-like {
+  border-top-color: white;
+  border-top-width: 1px;
+  border-top-style: solid; }
+  .rogue-like h2, .rogue-like .wordpress h3, .wordpress .rogue-like h3 {
+    font-size: 22pt;
+    margin: 0; }
+  .rogue-like p {
+    text-align: center; }
+
+.rl-wrapper {
+  width: 90%;
+  height: 76%;
+  border: solid #b8420f 3px;
+  overflow: hidden;
+  cursor: pointer; }
+  .rl-wrapper p {
+    position: relative;
+    top: 40%;
+    font-family: 'Courier', 'sans-serif';
+    font-size: 12pt;
+    text-align: center; }
+  .rl-wrapper .allScreens {
+    display: flex;
+    margin: auto;
+    align-items: flex-start;
+    justify-content: stretch;
+    counter-reset: skillIcon; }
+  .rl-wrapper .centered-block {
+    margin: auto;
+    display: block; }
+  .rl-wrapper .skillIcon {
+    color: white;
+    border-bottom: solid white 1px;
+    margin-top: 2px; }
+  .rl-wrapper .skillIcon::before {
+    counter-increment: skillIcon;
+    content: counter(skillIcon) ": "; }
+  .rl-wrapper .skillBar {
+    color: white;
+    height: 90vh;
+    min-width: 60px;
+    max-width: 180px;
+    background-color: #323232;
+    flex-grow: 1;
+    padding: 5px; }
+
+.rl-desc {
+  color: black;
+  border: double black 8px;
+  background-color: white; }
+  .rl-desc p {
+    padding: 10px 5%; }
+
+.about {
+  align-items: flex-end; }
+
+.mask-off {
+  background-image: url("../images/other/get_in_touch.jpg");
+  background-position: 60%;
+  margin: 3% auto; }
+
+.screen {
+  width: 100%;
+  background-color: white;
+  color: black; }
+  .screen p {
+    padding: 1%;
+    text-align: justify; }
+
+.contact-section p {
+  padding: 0 2%;
+  background-color: rgba(20, 20, 20, 0.4);
+  margin: 2%;
+  text-align: center;
+  display: flex;
+  align-items: center; }
+
+.contact {
+  background-color: rgba(20, 20, 20, 0.4);
+  width: 90%;
+  margin-bottom: 5%; }
+  .contact .submitButton {
+    position: relative;
+    right: 5%;
+    width: 20%;
+    max-width: 200px;
+    margin-top: 2.5%;
+    height: 100px;
+    float: right;
+    border-radius: 7px;
+    border: solid white 2px;
+    background-color: #b8420f;
+    color: white;
+    font-size: 4vw;
+    font-family: Artifika, serif; }
+  .contact label {
+    display: block;
+    flex-grow: 1;
+    padding: 2%; }
+    .contact label textarea {
+      margin-top: 2%;
+      width: 98%;
+      height: 300px; }
+    .contact label input {
+      width: 60%; }
+
+.footer {
+  overflow: hidden;
+  background-color: #312b1b;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  position: relative;
+  border-top-color: black;
+  border-top-width: 1px;
+  border-top-style: solid; }
+  .footer .footer-element {
+    flex-grow: 1;
+    border-right: dashed silver 1px;
+    padding: 1%;
+    margin: 1%;
+    width: 28%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
+    .footer .footer-element:last-of-type {
+      border: none; }
+
+@media only screen and (min-width: 1200px) {
+  .orange-backdrop1 {
+    background-image: url("../images/backdrops/leaves-medium.jpg"); }
+
+  .blue-backdrop1 {
+    background-image: url("../images/backdrops/trees-medium.jpg"); }
+
+  .blue-backdrop2 {
+    background-image: url("../images/backdrops/flags-medium.jpg"); } }
+@media only screen and (max-width: 600px) {
+  .landing .front-heading {
+    margin-left: 10%; }
+  .landing .pic, .landing .mask-off {
+    height: 100px;
+    width: 100px; }
+  .landing .tagline {
+    font-size: 10pt;
+    margin-right: 0; }
+    .landing .tagline .right {
+      bottom: 100px; }
+    .landing .tagline span .social {
+      height: 28px;
+      width: 28px; } }
+@media only screen and (max-width: 350px) {
+  .rl-desc p {
+    line-height: 12pt; }
+
+  .contact .submitButton {
+    float: none;
+    width: 90%;
+    right: 0;
+    margin: 2% auto;
+    height: 40px;
+    display: block; }
+
+  .wordpress .headings h3 {
+    display: none; }
+  .wordpress a {
+    overflow: hidden;
+    height: 100px; }
+
+  .img-wrapper {
+    width: 90%; }
+
+  .automagic blockquote {
+    line-height: 11pt; }
+  .automagic h2, .automagic .wordpress h3, .wordpress .automagic h3 {
+    color: black; }
+
+  h2, .wordpress h3 {
+    font-size: 20pt; }
+
+  .landing .front-heading {
+    margin-left: 0; }
+    .landing .front-heading h1 {
+      font-size: 18pt; }
+    .landing .front-heading span {
+      font-size: 9pt; }
+  .landing .intro-under {
+    display: none; }
+  .landing .middle {
+    line-height: 11pt;
+    font-size: 10pt; }
+    .landing .middle .intro-text {
+      width: 100%; }
+    .landing .middle .pic, .landing .middle .mask-off {
+      display: none; }
+  .landing .tagline {
+    align-self: center;
+    position: relative;
+    bottom: 10%; }
+    .landing .tagline big {
+      display: none; }
+    .landing .tagline span {
+      line-height: 14px; }
+      .landing .tagline span .social {
+        height: 20px;
+        width: 20px; }
+  .landing nav {
+    font-size: 8pt;
+    flex-wrap: wrap; }
+    .landing nav * {
+      line-height: 9pt;
+      flex-grow: 1; } }
 
 /*# sourceMappingURL=main.css.map */

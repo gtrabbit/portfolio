@@ -1,18 +1,23 @@
 @import "helpers.scss";
-
+$link-color1: hsl(18,85%,39%);
+$link-color: hsl(222, 29%, 35%);
 //=======Normalize / General =======>>>>>>
 
 body, p{
 	margin: 0px;
+	font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 h1, h2, h3, h4, h5{
 	margin: 0;
+	font-family: 'Artifika', serif;
+	text-rendering: optimizeLegibility;
 }
 
 h1{
 	font-size: 36pt;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 h2{
@@ -20,6 +25,17 @@ h2{
 	margin: 2% 1%;
 	font-size: 36pt;
 	text-shadow: 2px 2px 2px darkslategrey;
+}
+
+a{
+	color: $link-color1;
+	transition: color 0.5s;
+	&:visited{
+		color: complement($link-color1);
+	}
+	&:hover{
+		color: invert($link-color);
+	}
 }
 
 
@@ -34,6 +50,7 @@ h2{
 		background-repeat: no-repeat;
 		border: $standard-border;
 		box-shadow: 1px 2px 5px 2px #191f1f;
+		min-height: 150px;
 	}
 
 
@@ -65,9 +82,27 @@ h2{
 	.block{
 		display: block;
 		height: 30vh;
-		width: 80%;
+		width: 96%;
 		margin: auto;
 		background-position: center center;
+		flex-grow: 1;
+	}
+
+	.social{
+		height: 39px;
+		width: 39px;
+		transition: opacity 0.5s;
+		border-radius: 50%;
+		opacity: 0.5;
+		&:hover{
+			opacity: 1;
+		}
+	}
+
+	.make-block{
+		display: block;
+		width: 100%;
+		text-align: center;
 	}
 
 //============= Backgrounds ========>>>>>>>>
@@ -110,8 +145,8 @@ h2{
 
 .blue-backdrop1{
 	@extend %backdrop-area;
-	background-image: url('../images/backdrops/blueinkdissolvetall.jpg');
-	background-blend-mode: color-burn;
+	background-image: url('../images/backdrops/trees-tall.jpg');
+	background-blend-mode: soft-light;
 
 }
 
@@ -122,13 +157,21 @@ h2{
 }
 
 //============= Landing =======>>>>>>>>
-$link-color: hsl(18,85%,39%);
 
+		.pic{
+			@extend %covering-background;
+			background-image: url('../images/other/portrait.jpg');
+			background-position: 90%;
+			border-radius: 50%;
+			border: solid silver 2px;
+			height: 180px;
+			width: 180px;
+			margin: 3%;
+		}
 
 .landing{
 	align-items: center;
 	color: white;
-	@include simple-border(white, 'bottom');
 	.middle{
 		width: 92%;
 		padding: 3%;
@@ -156,17 +199,7 @@ $link-color: hsl(18,85%,39%);
 
 		}
 
-		.pic{
-			background-image: url('../images/other/profile_pic.jpg');
-			border-radius: 50%;
-			border: solid silver 2px;
-			height: 180px;
-			min-width: 180px;
-			@extend %covering-background;
-			margin: 3%;
 
-
-		}
 
 	}
 
@@ -186,29 +219,19 @@ $link-color: hsl(18,85%,39%);
 			flex-grow: 1;
 			text-align: center;
 		}
-		.social{
-			height: 40px;
-			width: 40px;
-			background-color: white;
-			border-radius: 50%;
-			margin: 0% 5%;
-			transition: background-color 0.5s;
-			&:hover{
-					background-color: $link-color;
-				}
 
-		}
 		nav{
 			display: flex;
 			justify-content: space-around;
 			flex-grow: 3;
+			font-family: 'Artifika', serif;
 			span{
 				color: $link-color;
 			}
 		}
 	
 			a{
-			color: complement($link-color);
+			color: invert($link-color);
 			text-decoration: none;
 			margin: 0% 2%;
 			transition: color 0.5s;
@@ -222,6 +245,7 @@ $link-color: hsl(18,85%,39%);
 				bottom: 20px;
 				font-size: 28pt;
 				color: white;
+				cursor: pointer;
 			}	
 
 	}
@@ -230,6 +254,7 @@ $link-color: hsl(18,85%,39%);
 		h1{
 			@include simple-border($link-color, 'bottom');
 			padding-left: 5%;
+			font-size: 32pt;
 		}
 		span{
 			padding-left: 15%;
@@ -240,6 +265,7 @@ $link-color: hsl(18,85%,39%);
 		margin-bottom: 2%;
 		padding: 3%;
 		color: white;
+
 	}
 }
 
@@ -250,7 +276,6 @@ $link-color: hsl(18,85%,39%);
 	align-items: center;
 	padding: 2%;
 	flex-wrap: wrap;
-	@include simple-border(white, 'bottom');
 	padding-top: 10%;
 }
 
@@ -258,15 +283,15 @@ $link-color: hsl(18,85%,39%);
 	border-radius: 50%;
 	height: 180px;
 	width: 180px;
-	mix-blend-mode: difference;
-	border: solid complement($link-color) 3px;
+	border: solid darkolivegreen 3px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: black;
-	font-size: 20pt;
-	background-color: white;
+	color: white;
+	font-size: 28pt;
+	background-color: rgba(30,30,30,0.6);
 	margin: 4% 1%;
+	font-family: 'Artifika', serif;
 }
 
 .right{
@@ -275,10 +300,13 @@ $link-color: hsl(18,85%,39%);
 
 .preview-box{
 	padding: 1%;
-	width: 60%;
+	width: 70%;
 	flex-grow: 1;
-	ul{
+
+	ul, p{
 		padding: 2%;
+		flex-grow: 1;
+		background-color: rgba(55,55,55,0.5);
 	}
 }
 
@@ -291,12 +319,13 @@ $link-color: hsl(18,85%,39%);
 		font-weight: 700;
 	}
 	ul{
+		padding:3%;
 		margin: 1%;
+		min-width: 150px;
 		li{
-			padding: 1%;
-			margin: 1%;
+			padding: 2px;
+			margin: 5px;
 			flex-grow: 1;
-			mix-blend-mode: exclusion;
 			border-radius: 15px;
 			color: white;
 			font-size: 10pt;
@@ -316,20 +345,30 @@ $link-color: hsl(18,85%,39%);
 
 	.holder{
 		height: auto;
-		border-radius: 15px;
+		border-radius: 5px;
 		width: 92%;
 		background-color: white;
 		margin: 3% auto;
-		box-shadow: 1px 2px 5px 2px #191f1f, 1px 2px 9px 5px white;
+		box-shadow: 1px 2px 5px 2px #191f1f, 1px 2px 5px 2px white;
 		padding: 1%;
+		.img-wrapper{
+			border: solid invert($link-color1) 2px;
+		}
 		blockquote{
 			border-bottom: dashed silver 1px;
+			width: 100%;
+			margin: 1%;
+			font-style: italic;
 		}
 		cite{
 			margin-left: 60px;
+			font-style: normal;
 			&::before{
 				content: "--";
 			}
+		}
+		p{
+			line-height: 120%;
 		}
 	}
 
@@ -338,19 +377,23 @@ $link-color: hsl(18,85%,39%);
 	}
 
 .automagic{
+	.holder.big{
+		width: 100%;
+		border-radius: 0;
+	}
 	font-size: 10pt;
 	color: black;
+	background-color: transparent;
 	.auto1{
 		background-image: url('../images/project-icons/automagic.jpg');
 	}
 	h2{
 		color: white;
-		mix-blend-mode: difference;
 		}
 	*{
 		p{
 			margin: 3% 1%;
-			font-size: 9pt;
+			font-size: 10pt;
 			color: rgb(40,40,40);
 		}
 	}
@@ -372,7 +415,7 @@ $link-color: hsl(18,85%,39%);
 	p{
 		margin: 10px;
 		padding: 0 2%;
-		font-size: 9pt;
+		font-size: 10pt;
 		text-align: justify;
 	}
 	h2{
@@ -397,28 +440,35 @@ $link-color: hsl(18,85%,39%);
 
 .automagic-afterthoughts{
 	align-items: center;
+	padding: 2%;
+	min-height: 100vh;
 	.holder{
 		p{
 			margin: 10px;
 			padding: 0 2%;
-			font-size: 9pt;
+			font-size: 11pt;
 			text-align: justify;
 			}		
-		width: 40%;
-		background-color: rgba(255,255,255,0.8);
-		color: black;
-	}
-		.sphere{
-		mix-blend-mode: color;
-		color: red;
+		width: 70%;
+		background-color: rgba(65,35,25,1);
+		color: white;
+		flex-grow: 1;
+		margin: 2%;
+		border: solid white 1px;
 	}
 }
 
 //-=-=-=-=-=-=- Wordpress Section =-=-=-=-=-=->>>>>
+$border-width: 4px;
+$margin-width: 15px;
+
 
 .wordpress{
+	flex-wrap: wrap;
 	.headings{
 		width: 40%;
+		flex-grow: 1;
+		min-width: 250px;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: space-around;
@@ -430,6 +480,7 @@ $link-color: hsl(18,85%,39%);
 	h2{
 		text-shadow: none;
 		z-index: 5;
+		border-bottom: solid $link-color1 1px;
 	}
 	h3{
 		@extend h2;
@@ -442,9 +493,25 @@ $link-color: hsl(18,85%,39%);
 		font-size: 10pt;
 
 	}
+	a{
+		margin: $margin-width;
+		flex-grow: 1;
+		width: 40%;
+		opacity: 0.4;
+		&:hover{
+			overflow: hidden;
+			margin: $margin-width - $border-width;
+			border: solid $link-color $border-width;
+			opacity: 1;
+		}
+	}
 	.img-wrapper{
 		flex-grow: 1;
+		height: 100%;
+		width: 100%;
+		margin: 0;
 	}
+
 
 
 }
@@ -471,19 +538,24 @@ $link-color: hsl(18,85%,39%);
 		overflow: hidden;
 		background-color: white;
 		background-blend-mode: luminosity;
+		max-width: 300px;
 		&:hover{
 			background-blend-mode: normal;
-			h3{
+			a{
 				padding: 50% 0;
 				background-color: rgba(250,250,250,0.6);
-				color: black;
+				color: $link-color1;
+			
 			}
 		}
-		h3{
+		a{
 			background-color: rgba(50,50,50,0.6);
 			text-align: center;
 			width: 100%;
 			color: white;
+			font-weight: 800;
+			text-decoration: none;
+			transition: all 0.5s;
 		}
 	}
 
@@ -525,8 +597,345 @@ $link-color: hsl(18,85%,39%);
 	background-image: url('../images/project-icons/wiki.jpg');
 }
 
-.twitch{
-	background-image: url('../images/project-icons/twitchapp.jpg');
+// .twitch{
+// 	background-image: url('../images/project-icons/twitchapp.jpg');
+// }
+
+.portfolio{
+	background-image: url('../images/project-icons/portfolio.jpg');
+}
+//-----------------
+
+
+
+//================ Rogue-Like --=-=-=-=-=-=------->>>>>>>>
+
+.rogue-like{
+	@include simple-border(white, 'top');
+	h2{
+		font-size: 22pt;
+		margin: 0;
+	}
+	p{
+		text-align: center;
+	}
+
 }
 
-//-----------------
+.rl-wrapper{
+	width: 90%;
+	height: 76%;
+	border: solid $link-color1 3px;
+	overflow: hidden;
+	cursor: pointer;
+
+
+	p{
+		position: relative;
+		top: 40%;
+		font-family: 'Courier', 'sans-serif';
+		font-size: 12pt;
+		text-align: center;
+	}
+	.allScreens{
+		display: flex;
+		margin: auto;
+		align-items: flex-start;
+		justify-content: stretch;
+		counter-reset: skillIcon;
+	}
+
+	.centered-block{
+		margin: auto;
+		display: block;
+	}
+	.skillIcon{
+		color: white;
+		border-bottom: solid white 1px;
+		margin-top: 2px;
+	}
+	.skillIcon::before{
+		counter-increment: skillIcon;
+		content: counter(skillIcon) ": ";
+	}
+
+	.skillBar{
+		color: white;
+		height: 90vh;
+		min-width: 60px;
+		max-width: 180px;
+		background-color: rgba(50,50,50,1);
+		flex-grow: 1;
+		padding: 5px;
+	}
+
+}
+
+.rl-desc{
+	color: black;
+	border: double black 8px;
+
+	p{
+		padding: 10px 5%;
+
+	}
+	background-color: white;
+}
+
+
+//----------About + Contact---------->>>>>>>
+
+.about{
+	align-items: flex-end;
+}
+
+.mask-off{
+	@extend .pic;
+	background-image: url('../images/other/get_in_touch.jpg');
+	background-position: 60%;
+	margin: 3% auto;
+
+
+}
+
+.screen{
+	width: 100%;
+	background-color: white;
+	color: black;
+	@extend %border-top-and-bot;
+	p{
+		padding: 1%;
+		text-align: justify;
+	}
+
+}
+
+.contact-section{
+	p{
+		padding: 0 2%;
+		background-color: rgba(20,20,20,0.4);
+		margin: 2%;
+		text-align: center;
+		display: flex;
+		align-items: center;
+	}
+}
+
+.contact{
+	background-color: rgba(20,20,20,0.4);
+	width: 90%;
+	margin-bottom: 5%;
+	.submitButton{
+		position: relative;
+		right: 5%;
+		width: 20%;
+		max-width: 200px;
+		margin-top: 2.5%;
+		height: 100px;
+		float: right;
+		border-radius: 7px;
+		border: solid white 2px;
+		background-color: $link-color1;
+		color: white;
+		font-size: 4vw;
+		font-family: Artifika, serif;
+	}
+	label{
+		display: block;
+		flex-grow: 1;
+		padding: 2%;
+		textarea{
+			margin-top: 2%;
+			width: 98%;
+			height: 300px;
+		}
+		input{
+			width: 60%;
+		}
+	}
+}
+
+
+
+
+
+//=========footer========>>>>>>>>>>
+
+
+
+.footer{
+	overflow: hidden;
+	background-color: darken(complement($link-color), 20);
+	display: flex;
+	flex-wrap: wrap;
+
+	color: white;
+	position: relative;
+	@include simple-border(black, 'top');
+	.footer-element{
+		flex-grow: 1;
+		border-right: dashed silver 1px;
+		padding: 1%;
+		margin: 1%;
+		width: 28%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		&:last-of-type{
+			border: none;
+		}
+	}
+
+}
+
+
+
+
+
+
+//===========Media Queries=======>>>>>>
+
+
+//load wider backdrops for large displays
+@media only screen and (min-width: 1200px){
+.orange-backdrop1{
+	background-image: url('../images/backdrops/leaves-medium.jpg');
+}
+
+.blue-backdrop1{
+	background-image: url('../images/backdrops/trees-medium.jpg');
+}
+
+.blue-backdrop2{
+	background-image: url('../images/backdrops/flags-medium.jpg');
+}
+
+}
+
+//medium displays
+@media only screen and (max-width: 600px){
+	.landing{
+		.front-heading{
+			margin-left: 10%;
+		}
+		.pic{
+			height: 100px;
+			width: 100px;
+		}
+		.tagline{
+			font-size: 10pt;
+			margin-right: 0;
+			.right{
+				bottom: 100px;
+			}
+			span{
+				.social{
+					height: 28px;
+					width: 28px;
+				}
+			}
+		}
+		
+	}
+
+}
+
+
+//smallest displays
+
+@media only screen and (max-width: 350px){
+	
+	.rl-desc{
+		p{
+			line-height: 12pt;
+		}
+	}
+
+
+	.contact{
+		.submitButton{
+			float: none;
+			width: 90%;
+			right: 0;
+			margin: 2% auto;
+			height: 40px;
+			display: block;
+		}
+	}
+
+	.wordpress{
+		.headings{
+			h3{
+				display: none;
+			}
+		}
+		a{
+			overflow: hidden;
+			height: 100px;
+		}
+	}
+
+	.img-wrapper{
+		width: 90%;
+	}
+
+	.automagic{
+		blockquote{
+			line-height: 11pt;
+		}
+		h2{
+			color: black;
+		}
+	}
+	h2{
+		font-size: 20pt;
+	}
+	.landing{
+		.front-heading{
+			margin-left: 0;
+			h1{
+				font-size: 18pt;
+			}
+			span{
+				font-size: 9pt;
+			}
+		}
+		.intro-under{
+			display: none;
+		}
+		.middle{
+			line-height: 11pt;
+			font-size: 10pt;
+			.intro-text{
+				width: 100%;
+			}
+			.pic{
+				display: none;
+			}
+		}
+		.tagline{
+			align-self: center;
+			position: relative;
+			bottom: 10%;
+			big{
+				display: none;
+			}
+			span{
+				line-height: 14px;
+				.social{
+					height: 20px;
+					width: 20px;
+				}
+			}
+		}
+		nav{
+			font-size: 8pt;
+			flex-wrap: wrap;
+			*{
+				line-height: 9pt;
+				flex-grow: 1;
+			}
+		}
+	} 
+}
