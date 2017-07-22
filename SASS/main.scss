@@ -427,9 +427,7 @@ a{
 		font-size: $med-font;
 		text-align: justify;
 	}
-	h2{
-		font-size: $big-font;
-	}
+
 }
 
 
@@ -887,17 +885,6 @@ $margin-width: 15px;
 		width: 90%;
 	}
 
-	.automagic{
-		blockquote{
-			line-height: 11pt;
-		}
-		h2{
-			color: black;
-		}
-	}
-	h2{
-		font-size: $big-font;
-	}
 	.landing{
 		.front-heading{
 			margin-left: 0;

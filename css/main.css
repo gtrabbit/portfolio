@@ -330,8 +330,6 @@ a {
     padding: 0 2%;
     font-size: 16pt;
     text-align: justify; }
-  .automagic-details h2, .automagic-details .wordpress h3, .wordpress .automagic-details h3 {
-    font-size: 34pt; }
 
 .automagic-afterthoughts {
   align-items: center;
@@ -628,14 +626,6 @@ a {
 
   .img-wrapper {
     width: 90%; }
-
-  .automagic blockquote {
-    line-height: 11pt; }
-  .automagic h2, .automagic .wordpress h3, .wordpress .automagic h3 {
-    color: black; }
-
-  h2, .wordpress h3 {
-    font-size: 34pt; }
 
   .landing .front-heading {
     margin-left: 0; }
