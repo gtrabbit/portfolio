@@ -92,7 +92,7 @@ const makeScrolly = function(){
 			if ((document.body.scrollTop  > el.offsetTop - window.innerHeight) 
 				&& (document.body.scrollTop  < (el.offsetTop + el.scrollHeight)) ){
 					let value = (el.offsetTop - document.body.scrollTop) / window.innerHeight / 4  //makes a number from 0.25 to -1
-					let paraOffset = -(Math.round((value * window.innerHeight)) / 15)+50;
+					let paraOffset = -(value * (window.innerHeight / 12) );
 					let coords = "50% " + (paraOffset) + '%';
 					el.style.backgroundPosition = coords;
 					let colorValue;
