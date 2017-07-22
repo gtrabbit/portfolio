@@ -41,6 +41,7 @@ const showResponse = function(res){
 }
 
 const sendMail = function(){
+	document.getElementById('response').textContent = '';
 	let name = document.getElementById('name').value;
 	let email = document.getElementById('email').value;
 	let msg = document.getElementById('message').value;
@@ -57,7 +58,7 @@ const sendMail = function(){
 		} 
 	}
 
-	request.open('POST', '../portfolio/sendemail', true);
+	request.open('POST', '../sendemail', true);
 	request.setRequestHeader('Content-type', "application/json");
 	request.send(JSON.stringify(data));
 

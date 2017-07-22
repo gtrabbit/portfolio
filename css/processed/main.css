@@ -32,13 +32,13 @@ h1, h2, .wordpress h3, h3, h4, h5 {
   text-rendering: optimizeLegibility; }
 
 h1 {
-  font-size: 38pt;
+  font-size: 36pt;
   font-weight: 500; }
 
 h2, .wordpress h3 {
   text-align: center;
   margin: 2% 1%;
-  font-size: 34pt;
+  font-size: 36pt;
   text-shadow: 2px 2px 2px darkslategrey; }
 
 a {
@@ -93,7 +93,7 @@ a {
   width: 39px;
   transition: opacity 0.5s;
   border-radius: 50%;
-  opacity: 0.6; }
+  opacity: 0.5; }
   .social:hover {
     opacity: 1; }
 
@@ -159,7 +159,7 @@ a {
     .landing .middle .intro-text {
       width: 50%;
       flex-grow: 1;
-      font-size: 16pt;
+      font-size: 11pt;
       text-align: justify; }
       .landing .middle .intro-text .intro-text-content {
         border-bottom-color: white;
@@ -185,7 +185,6 @@ a {
       flex-grow: 1;
       text-align: center; }
     .landing .tagline nav {
-      font-size: 16pt;
       display: flex;
       justify-content: space-around;
       flex-grow: 3;
@@ -202,8 +201,8 @@ a {
     .landing .tagline .right {
       position: absolute;
       right: 15vw;
-      bottom: 30px;
-      font-size: 34pt;
+      bottom: 20px;
+      font-size: 28pt;
       color: white;
       cursor: pointer; }
   .landing .front-heading {
@@ -218,7 +217,7 @@ a {
       border-bottom-width: 1px;
       border-bottom-style: solid;
       padding-left: 5%;
-      font-size: 38pt; }
+      font-size: 32pt; }
     .landing .front-heading span {
       padding-left: 15%; }
 
@@ -226,8 +225,7 @@ a {
   align-items: center;
   padding: 2%;
   flex-wrap: wrap;
-  padding-top: 10%;
-  font-size: 16pt; }
+  padding-top: 10%; }
 
 .sphere {
   border-radius: 50%;
@@ -260,7 +258,7 @@ a {
   justify-content: space-around;
   flex-wrap: wrap; }
   .list-wrapper span {
-    font-size: 16pt;
+    font-size: 13pt;
     font-weight: 700; }
   .list-wrapper ul {
     padding: 3%;
@@ -272,7 +270,7 @@ a {
       flex-grow: 1;
       border-radius: 15px;
       color: white;
-      font-size: 16pt; }
+      font-size: 10pt; }
 
 .holder {
   height: auto;
@@ -301,7 +299,7 @@ a {
   width: 86%; }
 
 .automagic {
-  font-size: 16pt;
+  font-size: 10pt;
   color: black;
   background-color: transparent; }
   .automagic .holder.big {
@@ -313,7 +311,7 @@ a {
     color: white; }
   .automagic * p {
     margin: 3% 1%;
-    font-size: 16pt;
+    font-size: 10pt;
     color: #282828; }
 
 .auto2 {
@@ -328,10 +326,20 @@ a {
   .automagic-details p {
     margin: 10px;
     padding: 0 2%;
-    font-size: 16pt;
+    font-size: 10pt;
     text-align: justify; }
   .automagic-details h2, .automagic-details .wordpress h3, .wordpress .automagic-details h3 {
-    font-size: 34pt; }
+    font-size: 18pt; }
+  .automagic-details figcaption {
+    text-align: center;
+    color: #3f4f73;
+    padding-top: 1%;
+    border-bottom: dashed silver 1px;
+    font-size: 9pt;
+    width: 70%;
+    margin: auto;
+    background-color: rgba(192, 176, 140, 0.4);
+    box-shadow: 0px 1px 4px 1px silver; }
 
 .automagic-afterthoughts {
   align-items: center;
@@ -347,7 +355,7 @@ a {
     .automagic-afterthoughts .holder p {
       margin: 10px;
       padding: 0 2%;
-      font-size: 16pt;
+      font-size: 11pt;
       text-align: justify; }
 
 .wordpress {
@@ -371,7 +379,7 @@ a {
     color: black;
     display: flex;
     align-items: center;
-    font-size: 16pt; }
+    font-size: 10pt; }
   .wordpress a {
     margin: 15px;
     flex-grow: 1;
@@ -451,7 +459,7 @@ a {
   border-top-width: 1px;
   border-top-style: solid; }
   .rogue-like h2, .rogue-like .wordpress h3, .wordpress .rogue-like h3 {
-    font-size: 34pt;
+    font-size: 22pt;
     margin: 0; }
   .rogue-like p {
     text-align: center; }
@@ -466,7 +474,7 @@ a {
     position: relative;
     top: 40%;
     font-family: 'Courier', 'sans-serif';
-    font-size: 16pt;
+    font-size: 12pt;
     text-align: center; }
   .rl-wrapper .allScreens {
     display: flex;
@@ -501,8 +509,7 @@ a {
     padding: 10px 5%; }
 
 .about {
-  align-items: flex-end;
-  font-size: 16pt; }
+  align-items: flex-end; }
 
 .mask-off {
   background-image: url("../images/other/get_in_touch.jpg");
@@ -517,15 +524,13 @@ a {
     padding: 1%;
     text-align: justify; }
 
-.contact-section {
-  font-size: 16pt; }
-  .contact-section p {
-    padding: 0 2%;
-    background-color: rgba(20, 20, 20, 0.4);
-    margin: 2%;
-    text-align: center;
-    display: flex;
-    align-items: center; }
+.contact-section p {
+  padding: 0 2%;
+  background-color: rgba(20, 20, 20, 0.4);
+  margin: 2%;
+  text-align: center;
+  display: flex;
+  align-items: center; }
 
 .contact {
   background-color: rgba(20, 20, 20, 0.4);
@@ -545,8 +550,6 @@ a {
     color: white;
     font-size: 4vw;
     font-family: Artifika, serif; }
-    .contact .submitButton:hover {
-      background-color: #ef733e; }
   .contact label {
     display: block;
     flex-grow: 1;
@@ -581,7 +584,7 @@ a {
     .footer .footer-element:last-of-type {
       border: none; }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
   .orange-backdrop1 {
     background-image: url("../images/backdrops/leaves-medium.jpg"); }
 
@@ -591,20 +594,16 @@ a {
   .blue-backdrop2 {
     background-image: url("../images/backdrops/flags-medium.jpg"); } }
 @media only screen and (max-width: 600px) {
-  .blue-backdrop2 {
-    background-blend-mode: normal; }
-
   .landing .front-heading {
     margin-left: 10%; }
   .landing .pic, .landing .mask-off {
     height: 100px;
     width: 100px; }
   .landing .tagline {
-    font-size: 11pt;
-    margin-right: 0;
-    align-self: initial; }
+    font-size: 10pt;
+    margin-right: 0; }
     .landing .tagline .right {
-      bottom: 200px; }
+      bottom: 100px; }
     .landing .tagline span .social {
       height: 28px;
       width: 28px; } }
@@ -635,21 +634,21 @@ a {
     color: black; }
 
   h2, .wordpress h3 {
-    font-size: 34pt; }
+    font-size: 20pt; }
 
   .landing .front-heading {
     margin-left: 0; }
     .landing .front-heading h1 {
-      font-size: 34pt; }
+      font-size: 18pt; }
     .landing .front-heading span {
-      font-size: 11pt; }
+      font-size: 9pt; }
   .landing .intro-under {
     display: none; }
   .landing .middle {
-    line-height: 16pt; }
+    line-height: 11pt;
+    font-size: 10pt; }
     .landing .middle .intro-text {
-      width: 100%;
-      font-size: 16pt; }
+      width: 100%; }
     .landing .middle .pic, .landing .middle .mask-off {
       display: none; }
   .landing .tagline {
@@ -661,13 +660,11 @@ a {
     .landing .tagline span {
       line-height: 14px; }
       .landing .tagline span .social {
-        height: 30px;
-        width: 30px; }
+        height: 20px;
+        width: 20px; }
   .landing nav {
-    font-size: 11pt;
+    font-size: 8pt;
     flex-wrap: wrap; }
     .landing nav * {
       line-height: 9pt;
       flex-grow: 1; } }
-
-/*# sourceMappingURL=main.css.map */

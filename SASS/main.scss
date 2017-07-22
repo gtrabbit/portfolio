@@ -1,6 +1,12 @@
 @import "helpers.scss";
 $link-color1: hsl(18,85%,39%);
 $link-color: hsl(222, 29%, 35%);
+
+$small-font: 11pt;
+$med-font: 16pt;
+$big-font: 34pt;
+$biggest-font: 38pt;
+
 //=======Normalize / General =======>>>>>>
 
 body, p{
@@ -16,14 +22,14 @@ h1, h2, h3, h4, h5{
 }
 
 h1{
-	font-size: 36pt;
+	font-size: $biggest-font;
 	font-weight: 500;
 }
 
 h2{
 	text-align: center;
 	margin: 2% 1%;
-	font-size: 36pt;
+	font-size: $big-font;
 	text-shadow: 2px 2px 2px darkslategrey;
 }
 
@@ -93,7 +99,7 @@ a{
 		width: 39px;
 		transition: opacity 0.5s;
 		border-radius: 50%;
-		opacity: 0.5;
+		opacity: 0.6;
 		&:hover{
 			opacity: 1;
 		}
@@ -158,16 +164,16 @@ a{
 
 //============= Landing =======>>>>>>>>
 
-		.pic{
-			@extend %covering-background;
-			background-image: url('../images/other/portrait.jpg');
-			background-position: 90%;
-			border-radius: 50%;
-			border: solid silver 2px;
-			height: 180px;
-			width: 180px;
-			margin: 3%;
-		}
+.pic{
+	@extend %covering-background;
+	background-image: url('../images/other/portrait.jpg');
+	background-position: 90%;
+	border-radius: 50%;
+	border: solid silver 2px;
+	height: 180px;
+	width: 180px;
+	margin: 3%;
+}
 
 .landing{
 	align-items: center;
@@ -186,7 +192,7 @@ a{
 		.intro-text{
 			width: 50%;
 			flex-grow: 1;
-			font-size: 11pt;
+			font-size: $med-font;
 			text-align: justify;
 			.intro-text-content{
 				@include simple-border(white, 'bottom');
@@ -221,6 +227,7 @@ a{
 		}
 
 		nav{
+			font-size: $med-font;
 			display: flex;
 			justify-content: space-around;
 			flex-grow: 3;
@@ -242,8 +249,8 @@ a{
 			.right{
 				position: absolute;
 				right: 15vw;
-				bottom: 20px;
-				font-size: 28pt;
+				bottom: 30px;
+				font-size: $big-font;
 				color: white;
 				cursor: pointer;
 			}	
@@ -254,7 +261,7 @@ a{
 		h1{
 			@include simple-border($link-color, 'bottom');
 			padding-left: 5%;
-			font-size: 32pt;
+			font-size: $biggest-font;
 		}
 		span{
 			padding-left: 15%;
@@ -277,6 +284,7 @@ a{
 	padding: 2%;
 	flex-wrap: wrap;
 	padding-top: 10%;
+	font-size: $med-font;
 }
 
 .sphere{
@@ -288,7 +296,7 @@ a{
 	justify-content: center;
 	align-items: center;
 	color: white;
-	font-size: 28pt;
+	font-size: $big-font - 6;
 	background-color: rgba(30,30,30,0.6);
 	margin: 4% 1%;
 	font-family: 'Artifika', serif;
@@ -303,6 +311,7 @@ a{
 	width: 70%;
 	flex-grow: 1;
 
+
 	ul, p{
 		padding: 2%;
 		flex-grow: 1;
@@ -315,7 +324,7 @@ a{
 	justify-content: space-around;
 	flex-wrap: wrap;
 	span{
-		font-size: 13pt;
+		font-size: $med-font;
 		font-weight: 700;
 	}
 	ul{
@@ -328,7 +337,7 @@ a{
 			flex-grow: 1;
 			border-radius: 15px;
 			color: white;
-			font-size: 10pt;
+			font-size: $med-font;
 		}
 	}
 
@@ -381,7 +390,7 @@ a{
 		width: 100%;
 		border-radius: 0;
 	}
-	font-size: 10pt;
+	font-size: $med-font;
 	color: black;
 	background-color: transparent;
 	.auto1{
@@ -393,7 +402,7 @@ a{
 	*{
 		p{
 			margin: 3% 1%;
-			font-size: 10pt;
+			font-size: $med-font;
 			color: rgb(40,40,40);
 		}
 	}
@@ -415,24 +424,12 @@ a{
 	p{
 		margin: 10px;
 		padding: 0 2%;
-		font-size: 10pt;
+		font-size: $med-font;
 		text-align: justify;
 	}
 	h2{
-		font-size: 18pt;
+		font-size: $big-font;
 	}
-	figcaption{
-		text-align: center;
-		color: $link-color;
-		padding-top: 1%;
-		border-bottom: dashed silver 1px;
-		font-size: 9pt;
-		width: 70%;
-		margin: auto;
-		background-color: transparentize(invert($link-color), 0.6);
-		box-shadow: 0px 1px 4px 1px silver;
-	}
-
 }
 
 
@@ -446,7 +443,7 @@ a{
 		p{
 			margin: 10px;
 			padding: 0 2%;
-			font-size: 11pt;
+			font-size: $med-font;
 			text-align: justify;
 			}		
 		width: 70%;
@@ -490,7 +487,7 @@ $margin-width: 15px;
 		color: black;
 		display: flex;
 		align-items: center;
-		font-size: 10pt;
+		font-size: $med-font;
 
 	}
 	a{
@@ -613,7 +610,7 @@ $margin-width: 15px;
 .rogue-like{
 	@include simple-border(white, 'top');
 	h2{
-		font-size: 22pt;
+		font-size: $big-font;
 		margin: 0;
 	}
 	p{
@@ -634,7 +631,7 @@ $margin-width: 15px;
 		position: relative;
 		top: 40%;
 		font-family: 'Courier', 'sans-serif';
-		font-size: 12pt;
+		font-size: $med-font;
 		text-align: center;
 	}
 	.allScreens{
@@ -687,6 +684,7 @@ $margin-width: 15px;
 
 .about{
 	align-items: flex-end;
+	font-size: $med-font;
 }
 
 .mask-off{
@@ -711,6 +709,7 @@ $margin-width: 15px;
 }
 
 .contact-section{
+	font-size: $med-font;
 	p{
 		padding: 0 2%;
 		background-color: rgba(20,20,20,0.4);
@@ -725,6 +724,7 @@ $margin-width: 15px;
 	background-color: rgba(20,20,20,0.4);
 	width: 90%;
 	margin-bottom: 5%;
+
 	.submitButton{
 		position: relative;
 		right: 5%;
@@ -739,6 +739,9 @@ $margin-width: 15px;
 		color: white;
 		font-size: 4vw;
 		font-family: Artifika, serif;
+		&:hover{
+			background-color: lighten($link-color1, 20)
+		}
 	}
 	label{
 		display: block;
@@ -798,7 +801,7 @@ $margin-width: 15px;
 
 
 //load wider backdrops for large displays
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1000px){
 .orange-backdrop1{
 	background-image: url('../images/backdrops/leaves-medium.jpg');
 }
@@ -815,6 +818,9 @@ $margin-width: 15px;
 
 //medium displays
 @media only screen and (max-width: 600px){
+	.blue-backdrop2{
+		background-blend-mode: normal;
+	}
 	.landing{
 		.front-heading{
 			margin-left: 10%;
@@ -824,10 +830,11 @@ $margin-width: 15px;
 			width: 100px;
 		}
 		.tagline{
-			font-size: 10pt;
+			font-size: $small-font;
 			margin-right: 0;
+			align-self: initial;
 			.right{
-				bottom: 100px;
+				bottom: 200px;
 			}
 			span{
 				.social{
@@ -889,26 +896,27 @@ $margin-width: 15px;
 		}
 	}
 	h2{
-		font-size: 20pt;
+		font-size: $big-font;
 	}
 	.landing{
 		.front-heading{
 			margin-left: 0;
 			h1{
-				font-size: 18pt;
+				font-size: $big-font;
 			}
 			span{
-				font-size: 9pt;
+				font-size: $small-font;
 			}
 		}
 		.intro-under{
 			display: none;
 		}
 		.middle{
-			line-height: 11pt;
-			font-size: 10pt;
+			line-height: 16pt;
+			
 			.intro-text{
 				width: 100%;
+				font-size: $med-font;
 			}
 			.pic{
 				display: none;
@@ -924,13 +932,13 @@ $margin-width: 15px;
 			span{
 				line-height: 14px;
 				.social{
-					height: 20px;
-					width: 20px;
+					height: 30px;
+					width: 30px;
 				}
 			}
 		}
 		nav{
-			font-size: 8pt;
+			font-size: $small-font;
 			flex-wrap: wrap;
 			*{
 				line-height: 9pt;
